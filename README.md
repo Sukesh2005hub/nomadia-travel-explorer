@@ -13,6 +13,25 @@ NOMADIA is a modern React-based travel exploration web application designed to h
 [View Source Code](YOUR_GITHUB_REPOSITORY_URL_HERE)
 
 ---
+## 📸 Screenshots
+
+### Home & Hero
+
+![NOMADIA Home](public/screenshots/home.png)
+
+### Destination Details & Weather
+
+![Destination Details](public/screenshots/destination.png)
+
+### Famous Places
+
+![Famous Places](public/screenshots/famous-places.png)
+
+### AI Travel Planner
+
+![AI Travel Planner](public/screenshots/ai-planner.png)
+
+---
 
 ## ✨ Features
 
