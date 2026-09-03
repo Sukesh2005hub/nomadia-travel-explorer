@@ -1,0 +1,3550 @@
+/* =========================================================
+   NOMADIA - FINAL GLOBAL STYLES
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: #111111;
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: #202820;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 28px 6%;
+
+  color: #ffffff;
+}
+
+.navbar-logo {
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  transition: color 0.25s ease;
+}
+
+.navbar-logo:hover {
+  color: #dce6d8;
+}
+
+.navbar-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 32px;
+}
+
+.navbar-links a {
+  position: relative;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  opacity: 0.9;
+
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease;
+}
+
+.navbar-links a:hover {
+  opacity: 1;
+}
+
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: currentColor;
+
+  transition: width 0.25s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   OLD NAVBAR CLASS SUPPORT
+========================================================= */
+
+.logo {
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 36px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: #ffffff;
+
+  font-size: 0.9rem;
+
+  font-weight: 500;
+
+  opacity: 0.85;
+
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: #ffffff;
+
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-button {
+  padding: 12px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-button:hover {
+  background: #ffffff;
+
+  color: #111111;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE MENU SUPPORT
+========================================================= */
+
+.menu-button {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #ffffff;
+}
+
+.menu-button span {
+  display: block;
+
+  width: 16px;
+  height: 1px;
+
+  margin: 4px auto;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   AI PLANNER NAVBAR
+========================================================= */
+
+body:has(.ai-planner) .navbar {
+  color: #182018;
+}
+
+body:has(.ai-planner) .navbar-logo {
+  color: #182018;
+}
+
+body:has(.ai-planner) .navbar-links a {
+  color: #182018;
+
+  opacity: 0.9;
+}
+
+body:has(.ai-planner) .navbar-links a:hover {
+  color: #182018;
+
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 6% 80px;
+
+  overflow: hidden;
+
+  background: #111111;
+}
+
+.hero-video {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.hero-eyebrow {
+  margin-bottom: 24px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.25em;
+}
+
+.hero h1 {
+  margin-bottom: 30px;
+
+  color: #ffffff;
+
+  font-size: clamp(3.5rem, 8vw, 7rem);
+
+  line-height: 0.95;
+
+  font-weight: 700;
+
+  letter-spacing: -0.04em;
+}
+
+.hero h1 span {
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.hero-description {
+  max-width: 620px;
+
+  margin: 0 auto 40px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO SEARCH
+========================================================= */
+
+.hero-search {
+  display: flex;
+
+  width: min(600px, 100%);
+
+  margin: 0 auto;
+
+  padding: 6px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(12px);
+}
+
+.hero-search input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 15px 20px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 0.95rem;
+}
+
+.hero-search input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.hero-search button {
+  padding: 14px 26px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.hero-search button:hover {
+  background: #eeeeee;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LOCATION BUTTON
+========================================================= */
+
+.location-button {
+  margin-top: 14px;
+
+  padding: 12px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.location-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+
+  transform: translateY(-2px);
+}
+
+.location-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+.location-message,
+.search-message {
+  margin-top: 10px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  opacity: 0.85;
+}
+
+
+/* =========================================================
+   LOCATION WEATHER
+========================================================= */
+
+.location-weather {
+  width: min(100%, 520px);
+
+  margin: 18px auto 0;
+
+  padding: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  border-radius: 18px;
+
+  background: rgba(0, 0, 0, 0.28);
+
+  backdrop-filter: blur(14px);
+
+  color: #ffffff;
+
+  text-align: left;
+}
+
+.location-weather-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.location-weather-header h3 {
+  margin: 4px 0;
+
+  font-size: 20px;
+}
+
+.location-weather-header p {
+  margin: 0;
+
+  font-size: 13px;
+
+  opacity: 0.7;
+}
+
+.location-weather-header img {
+  width: 64px;
+  height: 64px;
+}
+
+.location-label {
+  font-size: 10px;
+
+  letter-spacing: 0.16em;
+
+  opacity: 0.65;
+}
+
+.location-weather-temperature {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 12px;
+
+  margin-top: 8px;
+}
+
+.location-weather-temperature strong {
+  font-size: 42px;
+
+  font-weight: 500;
+}
+
+.location-weather-temperature span {
+  font-size: 14px;
+
+  text-transform: capitalize;
+
+  opacity: 0.75;
+}
+
+.location-weather-details {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 18px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.location-weather-details div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.location-weather-details span {
+  font-size: 11px;
+
+  opacity: 0.6;
+}
+
+.location-weather-details strong {
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  left: 6%;
+  bottom: 30px;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.08em;
+}
+
+.scroll-arrow {
+  font-size: 1.2rem;
+
+  animation: scrollDown 1.5s infinite ease-in-out;
+}
+
+@keyframes scrollDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+
+/* =========================================================
+   EXPLORE SECTION
+========================================================= */
+
+.explore-section {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  padding: 120px 6%;
+
+  background: #f4f1ea;
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 60px;
+
+  margin-bottom: 70px;
+}
+
+.section-eyebrow {
+  margin-bottom: 20px;
+
+  color: #777777;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.section-heading h2 {
+  color: #111111;
+
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.05em;
+
+  font-weight: 700;
+}
+
+.section-heading h2 span {
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.section-description {
+  max-width: 380px;
+
+  margin-bottom: 5px;
+
+  color: #666666;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SEARCH + FILTERS
+========================================================= */
+
+.explore-controls {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 50px;
+}
+
+.destination-search {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: 300px;
+
+  padding: 13px 18px;
+
+  border: 1px solid #d5d1c8;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.destination-search:focus-within {
+  border-color: #111111;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.destination-search span {
+  color: #555555;
+
+  font-size: 1.3rem;
+}
+
+.destination-search input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #111111;
+
+  font-size: 0.9rem;
+}
+
+.destination-search input::placeholder {
+  color: #888888;
+}
+
+.region-filters {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.region-button {
+  padding: 10px 18px;
+
+  border: 1px solid #d5d1c8;
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: #555555;
+
+  font-size: 0.8rem;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.region-button:hover {
+  border-color: #111111;
+
+  color: #111111;
+}
+
+.region-button.active {
+  border-color: #111111;
+
+  background: #111111;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   DESTINATION GRID
+========================================================= */
+
+.destination-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   DESTINATION CARD
+========================================================= */
+
+.destination-card {
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.destination-image-wrapper {
+  position: relative;
+
+  height: 300px;
+
+  overflow: hidden;
+}
+
+.destination-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.destination-card:hover .destination-image {
+  transform: scale(1.06);
+}
+
+.destination-region {
+  position: absolute;
+
+  top: 16px;
+  left: 16px;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  color: #ffffff;
+
+  font-size: 0.65rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  backdrop-filter: blur(8px);
+}
+
+.destination-card-content {
+  padding: 24px;
+}
+
+.destination-card-content h3 {
+  margin-bottom: 5px;
+
+  color: #111111;
+
+  font-size: 1.5rem;
+
+  letter-spacing: -0.03em;
+}
+
+.destination-country {
+  margin-bottom: 18px;
+
+  color: #888888;
+
+  font-size: 0.8rem;
+}
+
+.destination-description {
+  margin-bottom: 22px;
+
+  color: #666666;
+
+  font-size: 0.85rem;
+
+  line-height: 1.6;
+}
+
+.destination-link {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #111111;
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+}
+
+.destination-link span {
+  font-size: 1.2rem;
+
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover .destination-link span {
+  transform: translate(4px, -4px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+  padding: 100px 20px;
+
+  text-align: center;
+}
+
+.empty-state h3 {
+  margin-bottom: 10px;
+
+  color: #111111;
+
+  font-size: 2rem;
+}
+
+.empty-state p {
+  color: #777777;
+
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   DESTINATION DETAILS PAGE
+========================================================= */
+
+.destination-details {
+  width: 100%;
+
+  background: #f4f1ea;
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   DESTINATION DETAIL HERO
+========================================================= */
+
+.destination-detail-hero {
+  position: relative;
+
+  width: 100%;
+
+  height: 75vh;
+
+  min-height: 600px;
+
+  overflow: hidden;
+
+  background: #111111;
+}
+
+.destination-detail-hero img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.destination-detail-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.15) 40%,
+      rgba(0, 0, 0, 0.7)
+    );
+}
+
+.destination-detail-content {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  padding: 35px 6% 70px;
+
+  color: #ffffff;
+}
+
+.back-button {
+  width: fit-content;
+
+  padding: 11px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  color: #ffffff;
+
+  font-size: 0.8rem;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+
+  transform: translateX(-3px);
+}
+
+.destination-title p {
+  margin-bottom: 14px;
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  opacity: 0.8;
+}
+
+.destination-title h1 {
+  margin-bottom: 10px;
+
+  font-size: clamp(4rem, 9vw, 9rem);
+
+  line-height: 0.85;
+
+  letter-spacing: -0.06em;
+}
+
+.destination-title span {
+  font-size: 1rem;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   DESTINATION INTRO
+========================================================= */
+
+.destination-intro {
+  display: grid;
+
+  grid-template-columns: 0.7fr 2fr;
+
+  gap: 80px;
+
+  padding: 130px 10%;
+
+  background: #f4f1ea;
+}
+
+.destination-intro-label {
+  padding-top: 10px;
+
+  color: #777777;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.destination-intro-content {
+  max-width: 900px;
+}
+
+.destination-intro-content h2 {
+  margin-bottom: 35px;
+
+  color: #111111;
+
+  font-size: clamp(3rem, 6vw, 6rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.05em;
+}
+
+.destination-intro-content h2 span {
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.destination-intro-content p {
+  max-width: 700px;
+
+  color: #666666;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CURRENT WEATHER SECTION
+========================================================= */
+
+.weather-section {
+  padding: 120px 6%;
+
+  background: #ece8de;
+
+  color: #182018;
+}
+
+.weather-heading {
+  max-width: 1100px;
+
+  margin: 0 auto 50px;
+}
+
+.weather-heading .section-eyebrow {
+  margin-bottom: 18px;
+
+  color: #4f5d4d;
+}
+
+.weather-heading h2 {
+  color: #182018;
+
+  font-size: clamp(3rem, 6vw, 5.8rem);
+
+  line-height: 0.92;
+
+  letter-spacing: -0.05em;
+
+  font-weight: 600;
+}
+
+.weather-heading h2 span {
+  color: #4b6248;
+
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   WEATHER LOADING / ERROR
+========================================================= */
+
+.weather-state {
+  max-width: 1100px;
+
+  min-height: 180px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+  border: 1px solid #d4d0c6;
+
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  color: #4d554d;
+}
+
+.weather-state p {
+  font-size: 14px;
+
+  color: #555d55;
+}
+
+.weather-error {
+  color: #762e22;
+
+  background: #fff8f5;
+
+  border-color: #e3c5bd;
+}
+
+.weather-spinner {
+  width: 28px;
+
+  height: 28px;
+
+  border: 3px solid #d8ddd5;
+
+  border-top-color: #354433;
+
+  border-radius: 50%;
+
+  animation: weatherSpin 0.8s linear infinite;
+}
+
+@keyframes weatherSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   WEATHER CARD
+========================================================= */
+
+.weather-card {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 35px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.2fr 1fr 1.5fr;
+
+  align-items: center;
+
+  gap: 30px;
+
+  border: 1px solid #d5d2c8;
+
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 20px 60px rgba(40, 35, 25, 0.08);
+}
+
+.weather-main {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.weather-icon {
+  width: 85px;
+
+  height: 85px;
+
+  object-fit: contain;
+}
+
+.weather-main strong {
+  display: block;
+
+  color: #182018;
+
+  font-size: 48px;
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: -0.04em;
+}
+
+.weather-main p {
+  margin-top: 8px;
+
+  color: #596159;
+
+  font-size: 14px;
+
+  text-transform: capitalize;
+}
+
+.weather-location {
+  padding-left: 25px;
+
+  border-left: 1px solid #e2dfd7;
+}
+
+.weather-location h3 {
+  margin-bottom: 6px;
+
+  color: #182018;
+
+  font-size: 24px;
+
+  font-weight: 700;
+}
+
+.weather-location p {
+  color: #777c76;
+
+  font-size: 14px;
+}
+
+.weather-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+
+  padding-left: 25px;
+
+  border-left: 1px solid #e2dfd7;
+}
+
+.weather-details div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.weather-details span {
+  color: #777c76;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+}
+
+.weather-details strong {
+  color: #202820;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FAMOUS PLACES
+========================================================= */
+
+.famous-places {
+  padding: 120px 6%;
+
+  background: #ffffff;
+
+  color: #111111;
+}
+
+.famous-places-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 60px;
+
+  margin-bottom: 65px;
+}
+
+.famous-places-heading h2 {
+  color: #111111;
+
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.05em;
+}
+
+.famous-places-heading h2 span {
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.famous-places-heading > p {
+  max-width: 350px;
+
+  color: #666666;
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+.famous-places-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 35px;
+}
+
+.famous-place-card {
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #f4f1ea;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.famous-place-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.famous-place-image-wrapper {
+  position: relative;
+
+  height: 430px;
+
+  overflow: hidden;
+}
+
+.famous-place-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.famous-place-card:hover .famous-place-image {
+  transform: scale(1.05);
+}
+
+.place-number {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  color: #ffffff;
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  backdrop-filter: blur(8px);
+}
+
+.famous-place-content {
+  padding: 28px;
+}
+
+.famous-place-content h3 {
+  margin-bottom: 12px;
+
+  color: #111111;
+
+  font-size: 1.7rem;
+
+  letter-spacing: -0.03em;
+}
+
+.famous-place-content p {
+  color: #666666;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   AI DESTINATION CHATBOT
+========================================================= */
+
+.destination-chatbot {
+  width: 100%;
+
+  padding: 120px 6%;
+
+  background: #f3efe6;
+
+  color: #182018;
+}
+
+
+/* =========================================================
+   CHATBOT HEADING
+========================================================= */
+
+.chatbot-heading {
+  max-width: 1100px;
+
+  margin: 0 auto 50px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+.chatbot-heading .section-eyebrow {
+  margin-bottom: 18px;
+
+  color: #4f5d4d;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.chatbot-heading h2 {
+  margin: 0;
+
+  color: #182018;
+
+  font-size: clamp(3rem, 6vw, 5.5rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.05em;
+
+  font-weight: 600;
+}
+
+.chatbot-heading h2 span {
+  color: #4b6248;
+
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.chatbot-heading > p {
+  max-width: 330px;
+
+  margin-bottom: 5px;
+
+  color: #555d55;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CHATBOT BOX
+========================================================= */
+
+.chatbot-box {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border: 1px solid #d5d2c8;
+
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 20px 60px rgba(40, 35, 25, 0.08);
+}
+
+
+/* =========================================================
+   CHAT MESSAGES
+========================================================= */
+
+.chatbot-messages {
+  min-height: 360px;
+
+  max-height: 560px;
+
+  overflow-y: auto;
+
+  padding: 35px;
+
+  background: #ffffff;
+}
+
+.chatbot-messages::-webkit-scrollbar {
+  width: 7px;
+}
+
+.chatbot-messages::-webkit-scrollbar-track {
+  background: #f4f1ea;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+
+  background: #c8c5bc;
+}
+
+
+/* =========================================================
+   CHATBOT EMPTY STATE
+========================================================= */
+
+.chatbot-empty {
+  min-height: 290px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.chatbot-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 50%;
+
+  background: #202820;
+
+  color: #ffffff;
+
+  font-size: 24px;
+}
+
+.chatbot-empty h3 {
+  margin-bottom: 8px;
+
+  color: #182018;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+.chatbot-empty > p {
+  max-width: 500px;
+
+  margin-bottom: 25px;
+
+  color: #666666;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CHATBOT SUGGESTIONS
+========================================================= */
+
+.chatbot-suggestions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.chatbot-suggestions button {
+  padding: 10px 16px;
+
+  border: 1px solid #d0ccc2;
+
+  border-radius: 999px;
+
+  background: #f7f5ef;
+
+  color: #303830;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.chatbot-suggestions button:hover {
+  border-color: #202820;
+
+  background: #202820;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CHAT MESSAGES
+========================================================= */
+
+.chat-message {
+  max-width: 78%;
+
+  margin-bottom: 25px;
+
+  padding: 18px 20px;
+
+  border-radius: 16px;
+}
+
+.chat-message.user {
+  margin-left: auto;
+
+  background: #202820;
+
+  color: #ffffff;
+
+  border-bottom-right-radius: 5px;
+}
+
+.chat-message.assistant {
+  margin-right: auto;
+
+  background: #f3efe6;
+
+  color: #252b25;
+
+  border-bottom-left-radius: 5px;
+}
+
+.chat-message-label {
+  margin-bottom: 7px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.65;
+}
+
+.chat-message.user .chat-message-label {
+  color: #ffffff;
+}
+
+.chat-message.assistant .chat-message-label {
+  color: #4b6248;
+}
+
+.chat-message p {
+  margin: 0;
+
+  color: inherit;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   CHATBOT LOADING
+========================================================= */
+
+.chatbot-loading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  height: 20px;
+}
+
+.chatbot-loading span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #4b6248;
+
+  animation:
+    chatbotTyping 1.2s
+    infinite
+    ease-in-out;
+}
+
+.chatbot-loading span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.chatbot-loading span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes chatbotTyping {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+
+    transform: translateY(-4px);
+  }
+}
+
+
+/* =========================================================
+   CHATBOT INPUT
+========================================================= */
+
+.chatbot-input-area {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 20px;
+
+  border-top: 1px solid #e1ded5;
+
+  background: #faf9f6;
+}
+
+.chatbot-input-area input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 54px;
+
+  padding: 0 18px;
+
+  border: 1px solid #c8c5bc;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #182018;
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.chatbot-input-area input::placeholder {
+  color: #777c76;
+}
+
+.chatbot-input-area input:focus {
+  border-color: #354433;
+
+  box-shadow:
+    0 0 0 3px rgba(53, 68, 51, 0.12);
+}
+
+.chatbot-input-area input:disabled {
+  background: #f3f1ec;
+
+  cursor: not-allowed;
+}
+
+.chatbot-input-area button {
+  height: 54px;
+
+  padding: 0 28px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #202820;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.chatbot-input-area button:hover:not(:disabled) {
+  background: #111711;
+
+  transform: translateY(-2px);
+}
+
+.chatbot-input-area button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   DESTINATION CTA
+========================================================= */
+
+.destination-cta {
+  padding: 140px 6%;
+
+  text-align: center;
+
+  background: #111111;
+
+  color: #ffffff;
+}
+
+.destination-cta > p {
+  margin-bottom: 25px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.destination-cta h2 {
+  margin-bottom: 45px;
+
+  font-size: clamp(3.5rem, 8vw, 7rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.05em;
+}
+
+.destination-cta h2 span {
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.cta-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 15px 24px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #eeeeee;
+
+  transform: translateY(-3px);
+}
+
+.cta-button span {
+  font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   NOT FOUND
+========================================================= */
+
+.destination-not-found {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  padding: 40px;
+
+  background: #f4f1ea;
+
+  color: #111111;
+
+  text-align: center;
+}
+
+.destination-not-found h1 {
+  font-size: 3rem;
+}
+
+.destination-not-found p {
+  color: #666666;
+}
+
+.back-home-button {
+  margin-top: 15px;
+
+  padding: 13px 22px;
+
+  border-radius: 999px;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   AI TRAVEL PLANNER
+========================================================= */
+
+.ai-planner {
+  min-height: 100vh;
+
+  padding: 150px 7vw 100px;
+
+  background: #f3efe6;
+
+  color: #182018;
+}
+
+
+/* =========================================================
+   PLANNER HEADER
+========================================================= */
+
+.planner-header {
+  max-width: 900px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.planner-header .section-eyebrow {
+  margin-bottom: 18px;
+
+  color: #4f5d4d;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.planner-header h1 {
+  margin: 0;
+
+  color: #182018;
+
+  font-size: clamp(52px, 7vw, 94px);
+
+  line-height: 0.95;
+
+  font-weight: 600;
+
+  letter-spacing: -0.055em;
+}
+
+.planner-header h1 span {
+  color: #4b6248;
+
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.planner-header > p:last-child {
+  max-width: 620px;
+
+  margin: 30px auto 0;
+
+  color: #3f473f;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PLANNER FORM
+========================================================= */
+
+.planner-form {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 32px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr) 190px;
+
+  gap: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #d8d4ca;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 60px rgba(40, 35, 25, 0.08);
+}
+
+.planner-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.planner-field label {
+  color: #303830;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.planner-field input,
+.planner-field select {
+  width: 100%;
+
+  height: 58px;
+
+  padding: 0 17px;
+
+  border: 1px solid #c8c5bc;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #181d18;
+
+  font-size: 16px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.planner-field input::placeholder {
+  color: #70756f;
+}
+
+.planner-field input:focus,
+.planner-field select:focus {
+  border-color: #354433;
+
+  box-shadow:
+    0 0 0 3px rgba(53, 68, 51, 0.12);
+}
+
+
+/* =========================================================
+   GENERATE BUTTON
+========================================================= */
+
+.planner-button {
+  grid-column: 1 / -1;
+
+  width: 100%;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #202820;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.planner-button:hover:not(:disabled) {
+  background: #111711;
+
+  transform: translateY(-2px);
+}
+
+.planner-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+.planner-button-spinner {
+  width: 17px;
+
+  height: 17px;
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation: plannerSpin 0.7s linear infinite;
+}
+
+@keyframes plannerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   PLANNER ERROR
+========================================================= */
+
+.planner-error {
+  grid-column: 1 / -1;
+
+  padding: 17px 20px;
+
+  border: 1px solid #e2bdb4;
+
+  border-radius: 12px;
+
+  background: #fff0eb;
+
+  color: #762e22;
+}
+
+.planner-error strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 14px;
+}
+
+.planner-error p {
+  margin: 0;
+
+  color: #762e22;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ITINERARY SECTION
+========================================================= */
+
+.itinerary-section {
+  max-width: 1000px;
+
+  margin: 90px auto 0;
+}
+
+.itinerary-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 35px;
+}
+
+.itinerary-heading .section-eyebrow {
+  margin-bottom: 12px;
+
+  color: #4f5d4d;
+}
+
+.itinerary-heading h2 {
+  margin: 0;
+
+  color: #182018;
+
+  font-size: clamp(38px, 5vw, 60px);
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: -0.045em;
+}
+
+.itinerary-heading h2 span {
+  color: #4b6248;
+
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.itinerary-status {
+  flex-shrink: 0;
+
+  padding: 9px 14px;
+
+  border-radius: 999px;
+
+  background: #dce6d8;
+
+  color: #263b24;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   ITINERARY CONTENT
+========================================================= */
+
+.itinerary-content {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #d5d2c8;
+
+  border-radius: 24px;
+
+  color: #252b25;
+
+  box-shadow:
+    0 20px 60px rgba(40, 35, 25, 0.08);
+}
+
+.itinerary-content h2 {
+  margin: 0;
+
+  padding: 25px 30px;
+
+  background: #202820;
+
+  color: #ffffff;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.02em;
+}
+
+.itinerary-content h3 {
+  margin: 0;
+
+  padding: 25px 30px 8px;
+
+  color: #202820;
+
+  font-size: 18px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+.itinerary-content h3::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+
+  margin-right: 10px;
+
+  border-radius: 50%;
+
+  background: #4b6248;
+
+  vertical-align: middle;
+}
+
+.itinerary-content ul {
+  margin: 0;
+
+  padding: 8px 30px 28px 55px;
+}
+
+.itinerary-content li {
+  margin-bottom: 11px;
+
+  color: #252b25;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  line-height: 1.7;
+}
+
+.itinerary-content li::marker {
+  color: #4b6248;
+}
+
+.itinerary-content li:last-child {
+  margin-bottom: 0;
+}
+
+.itinerary-content p {
+  margin: 0;
+
+  padding: 10px 30px;
+
+  color: #303630;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.itinerary-content h2 + h3 {
+  border-top: 1px solid #eeeae1;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .destination-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .weather-card {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .weather-details {
+    grid-column: 1 / -1;
+
+    padding-left: 0;
+
+    padding-top: 25px;
+
+    border-left: none;
+
+    border-top: 1px solid #e2dfd7;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .destination-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .explore-controls {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .destination-search {
+    width: 100%;
+  }
+
+  .region-filters {
+    justify-content: flex-start;
+  }
+
+  .destination-intro {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding: 100px 7%;
+  }
+
+  .famous-places-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .famous-places-heading > p {
+    max-width: 550px;
+  }
+
+  .chatbot-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .chatbot-heading > p {
+    max-width: 550px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* -----------------------------------------
+     NAVBAR
+  ----------------------------------------- */
+
+  .navbar {
+    padding: 22px 5%;
+  }
+
+  .navbar-links {
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+  }
+
+  .navbar-links a {
+    font-size: 11px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+
+  /* -----------------------------------------
+     HERO
+  ----------------------------------------- */
+
+  .hero {
+    height: 100vh;
+
+    min-height: 700px;
+
+    padding: 100px 5% 70px;
+  }
+
+  .hero h1 {
+    font-size:
+      clamp(3rem, 15vw, 5rem);
+
+    line-height: 0.95;
+  }
+
+  .hero-description {
+    max-width: 500px;
+
+    font-size: 0.9rem;
+  }
+
+  .hero-search {
+    flex-direction: column;
+
+    border-radius: 20px;
+  }
+
+  .hero-search input {
+    padding: 16px;
+  }
+
+  .hero-search button {
+    width: 100%;
+  }
+
+  .hero-scroll {
+    left: 5%;
+
+    bottom: 22px;
+  }
+
+
+  /* -----------------------------------------
+     LOCATION WEATHER
+  ----------------------------------------- */
+
+  .location-weather {
+    padding: 16px;
+  }
+
+  .location-weather-temperature strong {
+    font-size: 34px;
+  }
+
+  .location-weather-details {
+    gap: 8px;
+  }
+
+
+  /* -----------------------------------------
+     EXPLORE
+  ----------------------------------------- */
+
+  .explore-section {
+    padding: 90px 5%;
+  }
+
+  .section-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 50px;
+  }
+
+  .section-heading h2 {
+    font-size:
+      clamp(3rem, 14vw, 5rem);
+  }
+
+  .section-description {
+    max-width: 500px;
+  }
+
+  .explore-controls {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 20px;
+
+    margin-bottom: 40px;
+  }
+
+  .destination-search {
+    width: 100%;
+  }
+
+  .region-filters {
+    justify-content: flex-start;
+  }
+
+  .destination-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+  }
+
+  .destination-image-wrapper {
+    height: 260px;
+  }
+
+
+  /* -----------------------------------------
+     DESTINATION HERO
+  ----------------------------------------- */
+
+  .destination-detail-hero {
+    height: 70vh;
+
+    min-height: 500px;
+  }
+
+  .destination-detail-content {
+    padding: 25px 5% 50px;
+  }
+
+  .destination-title h1 {
+    font-size:
+      clamp(4rem, 18vw, 6rem);
+  }
+
+
+  /* -----------------------------------------
+     DESTINATION INTRO
+  ----------------------------------------- */
+
+  .destination-intro {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 90px 5%;
+  }
+
+  .destination-intro-content h2 {
+    font-size:
+      clamp(3rem, 14vw, 5rem);
+  }
+
+
+  /* -----------------------------------------
+     WEATHER
+  ----------------------------------------- */
+
+  .weather-section {
+    padding: 90px 5%;
+  }
+
+  .weather-heading {
+    margin-bottom: 40px;
+  }
+
+  .weather-heading h2 {
+    font-size:
+      clamp(3rem, 13vw, 5rem);
+  }
+
+  .weather-card {
+    grid-template-columns: 1fr;
+
+    padding: 25px;
+
+    border-radius: 20px;
+  }
+
+  .weather-location {
+    padding-left: 0;
+
+    padding-top: 20px;
+
+    border-left: none;
+
+    border-top: 1px solid #e2dfd7;
+  }
+
+  .weather-details {
+    grid-column: auto;
+
+    padding-left: 0;
+
+    padding-top: 20px;
+  }
+
+
+  /* -----------------------------------------
+     FAMOUS PLACES
+  ----------------------------------------- */
+
+  .famous-places {
+    padding: 90px 5%;
+  }
+
+  .famous-places-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 45px;
+  }
+
+  .famous-places-heading h2 {
+    font-size:
+      clamp(3rem, 14vw, 5rem);
+  }
+
+  .famous-places-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .famous-place-image-wrapper {
+    height: 350px;
+  }
+
+
+  /* -----------------------------------------
+     CHATBOT
+  ----------------------------------------- */
+
+  .destination-chatbot {
+    padding: 90px 5%;
+  }
+
+  .chatbot-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+  }
+
+  .chatbot-heading h2 {
+    font-size:
+      clamp(3rem, 13vw, 5rem);
+  }
+
+  .chatbot-heading > p {
+    max-width: 500px;
+
+    font-size: 14px;
+  }
+
+  .chatbot-box {
+    border-radius: 18px;
+  }
+
+  .chatbot-messages {
+    min-height: 340px;
+
+    padding: 22px;
+  }
+
+  .chat-message {
+    max-width: 88%;
+  }
+
+  .chatbot-input-area {
+    padding: 15px;
+  }
+
+  .chatbot-input-area input {
+    height: 50px;
+
+    font-size: 14px;
+  }
+
+  .chatbot-input-area button {
+    height: 50px;
+
+    padding: 0 20px;
+  }
+
+
+  /* -----------------------------------------
+     CTA
+  ----------------------------------------- */
+
+  .destination-cta {
+    padding: 100px 5%;
+  }
+
+  .destination-cta h2 {
+    font-size:
+      clamp(3.5rem, 15vw, 5rem);
+  }
+
+
+  /* -----------------------------------------
+     AI PLANNER
+  ----------------------------------------- */
+
+  .ai-planner {
+    padding: 120px 20px 70px;
+  }
+
+  .planner-header {
+    margin-bottom: 45px;
+  }
+
+  .planner-header h1 {
+    font-size: 52px;
+
+    letter-spacing: -0.04em;
+  }
+
+  .planner-header > p:last-child {
+    font-size: 16px;
+  }
+
+  .planner-form {
+    grid-template-columns: 1fr;
+
+    padding: 22px;
+
+    border-radius: 18px;
+  }
+
+  .planner-button {
+    grid-column: auto;
+  }
+
+  .itinerary-section {
+    margin-top: 65px;
+  }
+
+  .itinerary-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .itinerary-heading h2 {
+    font-size: 40px;
+  }
+
+  .itinerary-content {
+    border-radius: 18px;
+  }
+
+  .itinerary-content h2 {
+    padding: 21px;
+
+    font-size: 22px;
+  }
+
+  .itinerary-content h3 {
+    padding:
+      21px 21px 8px;
+  }
+
+  .itinerary-content ul {
+    padding:
+      8px 21px 24px 43px;
+  }
+
+  .itinerary-content li {
+    font-size: 15px;
+  }
+
+  .itinerary-content p {
+    padding:
+      8px 21px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+  /* -----------------------------------------
+     NAVBAR
+  ----------------------------------------- */
+
+  .navbar {
+    align-items: flex-start;
+
+    padding-top: 20px;
+  }
+
+  .navbar-logo {
+    font-size: 15px;
+  }
+
+  .navbar-links {
+    gap: 8px;
+
+    max-width: 75%;
+
+    justify-content: flex-end;
+  }
+
+  .navbar-links a {
+    font-size: 9px;
+  }
+
+
+  /* -----------------------------------------
+     HERO
+  ----------------------------------------- */
+
+  .hero {
+    min-height: 720px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.65rem;
+
+    letter-spacing: 0.18em;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-description {
+    font-size: 0.85rem;
+
+    line-height: 1.6;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+
+  /* -----------------------------------------
+     EXPLORE
+  ----------------------------------------- */
+
+  .explore-section {
+    padding: 75px 5%;
+  }
+
+  .section-heading h2 {
+    font-size: 3.2rem;
+  }
+
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-image-wrapper {
+    height: 300px;
+  }
+
+  .destination-card-content {
+    padding: 20px;
+  }
+
+  .region-button {
+    padding: 9px 14px;
+  }
+
+
+  /* -----------------------------------------
+     DESTINATION DETAILS
+  ----------------------------------------- */
+
+  .destination-detail-hero {
+    min-height: 460px;
+  }
+
+  .destination-title h1 {
+    font-size: 3.7rem;
+  }
+
+  .destination-intro {
+    padding: 75px 5%;
+  }
+
+  .famous-places {
+    padding: 75px 5%;
+  }
+
+  .famous-place-image-wrapper {
+    height: 300px;
+  }
+
+  .famous-place-content {
+    padding: 22px;
+  }
+
+
+  /* -----------------------------------------
+     WEATHER
+  ----------------------------------------- */
+
+  .weather-section {
+    padding: 75px 5%;
+  }
+
+  .weather-card {
+    padding: 20px;
+  }
+
+  .weather-main {
+    gap: 10px;
+  }
+
+  .weather-icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .weather-main strong {
+    font-size: 38px;
+  }
+
+  .weather-details {
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 8px;
+  }
+
+  .weather-details span {
+    font-size: 10px;
+  }
+
+  .weather-details strong {
+    font-size: 14px;
+  }
+
+
+  /* -----------------------------------------
+     LOCATION WEATHER
+  ----------------------------------------- */
+
+  .location-weather-details {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .location-weather-temperature {
+    flex-direction: column;
+
+    gap: 3px;
+  }
+
+
+  /* -----------------------------------------
+     CHATBOT
+  ----------------------------------------- */
+
+  .destination-chatbot {
+    padding: 75px 5%;
+  }
+
+  .chatbot-empty {
+    min-height: 300px;
+  }
+
+  .chatbot-empty h3 {
+    font-size: 20px;
+  }
+
+  .chatbot-empty > p {
+    font-size: 13px;
+  }
+
+  .chatbot-suggestions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .chatbot-suggestions button {
+    width: 100%;
+  }
+
+  .chatbot-messages {
+    padding: 18px;
+  }
+
+  .chat-message {
+    max-width: 94%;
+
+    padding: 15px;
+  }
+
+  .chat-message p {
+    font-size: 14px;
+  }
+
+  .chatbot-input-area {
+    gap: 8px;
+
+    padding: 12px;
+  }
+
+  .chatbot-input-area input {
+    height: 48px;
+
+    padding: 0 13px;
+
+    font-size: 13px;
+  }
+
+  .chatbot-input-area button {
+    height: 48px;
+
+    padding: 0 16px;
+  }
+
+
+  /* -----------------------------------------
+     CTA
+  ----------------------------------------- */
+
+  .destination-cta {
+    padding: 80px 5%;
+  }
+
+
+  /* -----------------------------------------
+     AI PLANNER
+  ----------------------------------------- */
+
+  .ai-planner {
+    padding:
+      120px 16px 60px;
+  }
+
+  .planner-header h1 {
+    font-size: 44px;
+  }
+
+  .planner-header > p:last-child {
+    font-size: 14px;
+  }
+
+  .planner-form {
+    padding: 18px;
+  }
+
+  .planner-field input,
+  .planner-field select {
+    height: 54px;
+
+    font-size: 15px;
+  }
+
+  .planner-button {
+    height: 54px;
+  }
+
+  .itinerary-heading h2 {
+    font-size: 34px;
+  }
+
+  .itinerary-status {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .navbar-links {
+    gap: 6px;
+  }
+
+  .navbar-links a {
+    font-size: 8px;
+  }
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .destination-title h1 {
+    font-size: 3.2rem;
+  }
+
+  .weather-details {
+    gap: 5px;
+  }
+
+  .weather-details strong {
+    font-size: 12px;
+  }
+
+  .location-weather-details {
+    gap: 5px;
+  }
+
+  .chatbot-input-area {
+    flex-direction: column;
+  }
+
+  .chatbot-input-area input,
+  .chatbot-input-area button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
