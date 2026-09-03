@@ -198,4 +198,4 @@ travel-explorer/
 ├── package.json
 ├── package-lock.json
 ├── vite.config.js
-└── README.mds
+└── README.md
